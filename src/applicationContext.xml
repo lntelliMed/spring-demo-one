@@ -15,9 +15,17 @@
     
     <bean id="myCoach" 
     	class="com.intellimed.springdemo.TennisCoach">
-    	
+  
     	<!-- Inject the weather object via the constructor -->
     	<constructor-arg ref="myWeather"></constructor-arg>
+    
+    </bean>
+    
+    <bean id="cricketCoach"
+    		class="com.intellimed.springdemo.CricketCoach">
+    		<property name="weatherService" ref="myWeather"></property>
+    		<property name="emailAddress" value="someemailaddress@coachscompanyurl.com"/>
+    		<property name="team" value="Sunrisers"/>
     
     </bean>
 </beans>
