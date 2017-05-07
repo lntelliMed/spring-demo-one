@@ -5,7 +5,7 @@ public class TrackCoach implements Coach {
 	private WeatherService weatherService;
 
 	public TrackCoach(WeatherService theWeather){
-		this.weatherService = weatherService;
+		this.weatherService = theWeather;
 	}
 	
 	public TrackCoach() {
@@ -20,6 +20,14 @@ public class TrackCoach implements Coach {
 	@Override
 	public String getDailyWeather() {
 		return weatherService.getTodaysWeather();
+	}
+	
+	public void doMyStartupStuff(){
+		System.out.println("TrackCoach: inside doMyStartupStuff()");
+	}
+	
+	public void doMyCleanupStuff(){
+		System.out.println("TrackCoach: inside doMyCleanupStuff()");
 	}
 
 }

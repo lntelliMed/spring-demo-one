@@ -7,7 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="spring.properties"/>
     <!-- Define your beans here -->
     
     <bean id="myWeather"
@@ -15,24 +14,13 @@
     </bean>
     
     <bean id="myCoach" 
-    	class="com.intellimed.springdemo.TennisCoach">
+    	class="com.intellimed.springdemo.TennisCoach" scope="prototype">
   
     	<!-- Inject the weather object via the constructor -->
     	<constructor-arg ref="myWeather"></constructor-arg>
     
     </bean>
-    
-    <bean id="cricketCoach"
-    		class="com.intellimed.springdemo.CricketCoach">
-    		<property name="weatherService" ref="myWeather"></property>
-    		
-<!--     		<property name="emailAddress" value="someemailaddress@coachscompanyurl.com"/> -->
-<!--     		<property name="team" value="Sunrisers"/> -->
 
-    		<property name="emailAddress" value="${foo.email}"/>
-    		<property name="team" value="${foo.team}"/>
-    
-    </bean>
 </beans>
 
 

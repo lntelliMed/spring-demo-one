@@ -21,5 +21,12 @@ public class TennisCoach implements Coach {
 	public String getDailyWeather() {
 		return weatherService.getTodaysWeather();
 	}
+	
+	public void doMyStartupStuff(){
+		System.out.println("TennisCoach: Inside doMyStartupStuff()");
+	}
+	public void doMyCleanupStuff(){
+		System.out.println("TennisCoach: Inside doMyCleanupStuff()");
 
+	}
 }
